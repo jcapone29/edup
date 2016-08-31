@@ -1,0 +1,77 @@
+﻿.loginmain {
+    width: 100%;
+    height: 100%;
+}
+
+.loginmainbanner {
+    width: 100%;
+    position: relative;
+    height: 5px;
+    background-color: #2f3d42;
+}
+
+.loginmainimgs {
+    height: 100%;
+    background: url('../../Images/sunset_slide.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.loginmainimgsfadeout {
+    opacity: 0;
+}
+
+.loginmainimgsfadein {
+    opacity: 1;
+}
+
+.loginimglarge {
+    opacity: .91;
+    max-height: 250px;
+    width: 100%;
+    position: relative;
+}
+
+.loginmainfooter {
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: transparent;
+    z-index: 5;
+    bottom: 43px;
+}
+
+.logincourselabel {
+    font-size: 45px;
+    color: #767676;
+    bottom: 70px;
+}
+
+.loginmainform {
+    left: 37%;
+    position: fixed;
+    top: 40%;
+    z-index: 1;
+
+}
+
+.logindashbuttons {
+    width: 100%;
+}
+
+.logindashfacebook {
+    padding-bottom: 15px;
+}
+
+.dashloginbackground {
+    height: 50%;
+    width: 100%;
+}
+
+.dashloginbackimage {
+    height: 100%;
+    width: 100%;
+}

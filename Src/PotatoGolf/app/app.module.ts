@@ -1,0 +1,62 @@
+﻿module Potato.Golf {
+
+    export var app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router','satellizer']);
+
+    app.config(function ($stateProvider: any, $urlRouterProvider: any, $authProvider: any) {
+        $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'app/views/login.html',
+                controller: 'LoginCtrl'
+            })
+            .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: 'app/views/dashboard.html',
+                controller: 'DashboardCtrl'
+            })
+            .state('messageboard', {
+                url: '/messageboard',
+                templateUrl: 'app/views/messageboard.html',
+                controller: 'DashboardCtrl'
+            })
+            .state('tickgraph', {
+                url: '/tickgraph',
+                templateUrl: 'app/views/tickgraph.html',
+                controller: 'DashboardCtrl'
+            })
+        // if none of the above states are matched, use this as the fallback
+        $urlRouterProvider.otherwise('/login');
+
+        $authProvider.facebook({
+            clientId: 'Facebook App ID',
+            responseType: 'token',
+            name: 'facebook',
+            url: '/auth/facebook',
+            authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
+            redirectUri: window.location.origin + '/',
+            requiredUrlParams: ['display', 'scope'],
+            scope: ['email'],
+            scopeDelimiter: ',',
+            display: 'popup',
+            oauthType: '2.0',
+            popupOptions: { width: 280, height: 400 }
+        });
+        $authProvider.google({
+            clientId: '664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com',
+            url: '/auth/google',
+            authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+            redirectUri: window.location.origin,
+            requiredUrlParams: ['scope'],
+            optionalUrlParams: ['display'],
+            scope: ['profile', 'email'],
+            scopePrefix: 'openid',
+            scopeDelimiter: ' ',
+            display: 'popup',
+            oauthType: '2.0',
+            popupOptions: { width: 452, height: 633 }
+        });
+
+       
+    });
+
+}
