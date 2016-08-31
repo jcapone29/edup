@@ -1,15 +1,98 @@
-﻿<div  ng-controller="DashboardCtrl as vm" class="mainviewwrapper">
-    <div class="card">
-        <div class="item item-text-wrap">
-           <div class="col-xs-12">
-               <div class="list">
-                   <a class="item item-avatar" href="#">
-                       <img src="../../Images/headshot.jpg">
-                       <h2>{{vm.dashsrv.currentActiveUser.FirstName}} {{vm.dashsrv.currentActiveUser.LastName}}</h2>
+﻿<link href="../app/Styles/dashboard.css" rel="stylesheet" />
+<div ng-controller="DashboardCtrl as vm" class="mainviewwrapper">
+    <div class="list card userinfomain">
+
+        <div>
+            <div class="col-xs-12">
+                <div class="list">
+                    <div class="col-xs-5">
+                        <img class="userdashboardheadshot img-responsive" src="../../Images/headshot.jpg">
+
+                    </div>
+                    <div class="col-xs-7">
+                        {{vm.dashsrv.currentActiveUser.FirstName}} {{vm.dashsrv.currentActiveUser.LastName}}
+
                        
-                   </a>
-               </div>
-           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item item-divider userprofilefooter">
+            <table class="dashuserinfotable">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="wrap dashinfoboxtop">
+                                <div class="table-big-label" style="width: 50%">Age</div>
+                                <div class="table-big-value">
+                                    {{vm.dashsrv.currentActiveUser.FirstName}} 			
+                                  <span class="table-birthday-wrapper">
+                                        <span class="table-birthday">
+                                           {{vm.dashsrv.currentActiveUser.LastName}}	
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="wrap dashinfoboxtop">
+                                <div class="table-big-label" style="width: 50%">Handicap</div>
+                                <div class="table-big-value">
+                                    12
+                                    <span class="table-birthday-wrapper">
+                                        <span class="table-birthday">
+                                           11.9
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="wrap dashinfoboxtop">
+                                <div class="table-big-label" style="width: 50%">Low</div>
+                                <div class="table-big-value">
+                                   82
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="wrap dashinfoboxbottom">
+                                <div class="table-big-label" style="width: 50%">Rounds</div>
+                                <div class="table-big-value">
+                                   16
+                                    
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="wrap dashinfoboxbottom">
+                                <div class="table-big-label" style="width: 50%">Age</div>
+                                <div class="table-big-value">
+                                    {{vm.dashsrv.currentActiveUser.FirstName}}
+                                    <span class="table-birthday-wrapper">
+                                        <span class="table-birthday">
+                                            {{vm.dashsrv.currentActiveUser.LastName}}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="wrap dashinfoboxbottom">
+                                <div class="table-big-label" style="width: 50%">Avg.</div>
+                                <div class="table-big-value">
+                                    88.6
+                                  
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
         </div>
     </div>
 </div>

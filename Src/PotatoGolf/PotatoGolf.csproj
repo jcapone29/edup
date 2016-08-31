@@ -23,12 +23,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\CourseImgs\Augusta-National-Golf-Course-in-Georgia-900x563.jpg" />
+    <Content Include="app\CourseImgs\goodwp.com_19594.jpg" />
     <Content Include="app\CourseImgs\Pebble_Beach.jpg" />
     <Content Include="app\CourseImgs\Pine_Vally.JPG" />
     <Content Include="app\CourseImgs\Sebonack-Golf-Course-in-Southampton-900x603.jpg" />
     <Content Include="app\CourseImgs\St.-Andrews-Golf-Course-900x600.jpg" />
     <Content Include="app\Styles\app.css" />
+    <Content Include="app\Styles\dashboard.css" />
     <Content Include="app\Styles\login.css" />
+    <Content Include="app\Styles\mobile.css" />
     <Content Include="app\Styles\slideoutbar.css" />
     <Content Include="app\Styles\SlideoutNav.js" />
     <Content Include="app\views\dashboard.html" />

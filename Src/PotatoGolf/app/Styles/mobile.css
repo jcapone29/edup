@@ -1,0 +1,17 @@
+﻿
+/*Mobile Features*/
+@media screen and (max-width: 767px) {
+    .hidemainnavmobile {
+        display: none;
+    }
+
+    .loginmainform {
+        left: 15% !important;
+    }
+
+    .userdashboardheadshot {
+        top: 0 !important;
+        left: 0 !important;
+        max-height: 85px !important;
+    }
+}

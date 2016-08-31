@@ -4,6 +4,7 @@
 <link href="Content/ionic.css" rel="stylesheet" />
 <link href="Content/animate.css" rel="stylesheet" />
 <link href="/app/Styles/app.css" rel="stylesheet" />
+<link href="app/Styles/mobile.css" rel="stylesheet" />
 <link href="app/Styles/slideoutbar.css" rel="stylesheet" />
 <script src="Scripts/ionic.bundle.min.js"></script>
 <script src="Scripts/jquery-3.1.0.min.js"></script>
@@ -22,7 +23,7 @@
         <ion-pane ion-side-menu-content>
             <ion-nav-bar class="bar bar-header maindashnav">
                 <ion-nav-buttons side="left">
-                  <div class="mainnavleftbuttons">
+                  <div class="mainnavleftbuttons hidemainnavmobile">
                       <span class="mainnavtext">Daily Fore</span>
                       <span class="mainnavtext">Daily Fore</span>
                       <span class="mainnavtext">Daily Fore</span>
@@ -33,7 +34,7 @@
                     <div class="dashuserinfo">
                         <ul>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle " data-toggle="dropdown"><span class="ion-person dashuserinfo"></span> <b class="caret"></b></a>
+                                <a class="dropdown-toggle " data-toggle="dropdown"><span class="ion-person dashuserinfo"></span> <b class="caret"></b></a>
                                 <ul class="dropdown-menu pull-right animated fadeInLeft">
                                     <li><a href="#">{{vm.dashsrv.dahsuserdropdown}}</a></li>
                                     <li><a href="#">Another action</a></li>
@@ -51,7 +52,9 @@
                 <ion-nav-back-button class="button-icon"><span class="icon ion-ios7-arrow-left"></span></ion-nav-back-button>
 
             </ion-nav-bar>
-            <ion-nav-view><div ui-view class="dashview"></div></ion-nav-view>
+            <ion-nav-view>
+            <!--<div ui-view class="dashview"></div>-->
+            </ion-nav-view>
         </ion-pane>
 
         <ion-side-menu drag-content="false" side="left" ng-class="{'ng-hide' : vm.showside == false}">
