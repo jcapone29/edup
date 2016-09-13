@@ -49,11 +49,15 @@
     <Content Include="Content\select.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
+    <Content Include="Images\195540.svg" />
+    <Content Include="Images\Biltmore_Score_Card-2.jpg" />
     <Content Include="Images\golf-icon-70764.png" />
     <Content Include="Images\golf-sports-icons-70770.png" />
     <Content Include="Images\golf_sunset.jpg" />
     <Content Include="Images\headshot.jpg" />
+    <Content Include="Images\icon175x175.jpeg" />
     <Content Include="Images\person-golfing-hi.png" />
+    <Content Include="Images\scorecard_256.png" />
     <Content Include="Images\sunset_slide.jpg" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
@@ -87,6 +91,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Ghin\Ghin.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />

@@ -14,8 +14,10 @@
 <script src="Scripts/satellizer/satellizer.min.js"></script>
 <script src="Scripts/moment.min.js"></script>
 <script src="app/Styles/SlideoutNav.js"></script>
+
 <script src="dist/app.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-signin-client_id" content="664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com">
 
 <div ng-app="p.golf" ng-controller="DashboardCtrl as vm" class="mainpage">
     <ion-side-menus>
@@ -28,7 +30,7 @@
                       <span class="mainnavtext">Daily Fore</span>
                       <span class="mainnavtext">Daily Fore</span>
                   </div>
-
+                    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
                 </ion-nav-buttons>
                 <ion-nav-buttons side="right">
                     <div class="dashuserinfo">
@@ -72,7 +74,7 @@
                     <ion-item ui-sref="dashboard" class="item" menu-close><i class="icon ion-email"></i> Dashboard</ion-item>
                     <ion-item ui-sref="messageboard" class="item" menu-close><i class="icon ion-email"></i> Message Board</ion-item>
                     <ion-item ui-sref="tickgraph" class="item" menu-close><i class="ion-person-add"></i> Ghin</ion-item>
-                    <ion-item ui-sref="login" class="item" menu-close><i class="ion-person-add"></i> Login</ion-item>
+                    <ion-item ui-sref="login" class="item logoutButton" menu-close><i class="ion-person-add"></i> Logout </ion-item>
                 </ion-list>
             </ion-content>
         </ion-side-menu>

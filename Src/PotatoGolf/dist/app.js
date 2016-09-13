@@ -27,6 +27,22 @@ var Potato;
             });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');
+            $authProvider.google({
+                clientId: '664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com',
+            });
+            $authProvider.google({
+                url: 'http://localhost:51201/api/Gpro',
+                authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
+                redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+                scope: ['profile', 'email'],
+                scopePrefix: 'openid',
+                scopeDelimiter: ' ',
+                requiredUrlParams: ['scope'],
+                optionalUrlParams: ['display'],
+                display: 'popup',
+                type: '2.0',
+                popupOptions: { width: 580, height: 400 }
+            });
             $authProvider.facebook({
                 clientId: 'Facebook App ID',
                 responseType: 'token',
@@ -35,25 +51,11 @@ var Potato;
                 authorizationEndpoint: 'https://www.facebook.com/v2.5/dialog/oauth',
                 redirectUri: window.location.origin + '/',
                 requiredUrlParams: ['display', 'scope'],
-                scope: ['email'],
+                scope: [],
                 scopeDelimiter: ',',
                 display: 'popup',
                 oauthType: '2.0',
                 popupOptions: { width: 280, height: 400 }
-            });
-            $authProvider.google({
-                clientId: '664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com',
-                url: '/auth/google',
-                authorizationEndpoint: 'https://accounts.google.com/o/oauth2/auth',
-                redirectUri: window.location.origin,
-                requiredUrlParams: ['scope'],
-                optionalUrlParams: ['display'],
-                scope: ['profile', 'email'],
-                scopePrefix: 'openid',
-                scopeDelimiter: ' ',
-                display: 'popup',
-                oauthType: '2.0',
-                popupOptions: { width: 452, height: 633 }
             });
         });
     })(Golf = Potato.Golf || (Potato.Golf = {}));
@@ -83,6 +85,7 @@ var Potato;
     (function (Golf) {
         var LoginCtrl = (function () {
             function LoginCtrl($scope, dashsrv, $state, $auth, $ionicSideMenuDelegate) {
+                //this.$ionicSideMenuDelegate.canDragContent(this.dashsrv.showSideNavToggle);
                 this.$scope = $scope;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
@@ -90,8 +93,18 @@ var Potato;
                 this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
                 this.bio = 'test';
                 this.analysisSeries = new Array();
-                //this.$ionicSideMenuDelegate.canDragContent(this.dashsrv.showSideNavToggle);
+                $scope.authenticate = function (provider) {
+                    console.log(provider);
+                    $auth.authenticate(provider);
+                };
             }
+            //    onSignIn(googleUser: any) {
+            //    var profile = googleUser.getBasicProfile();
+            //    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            //    console.log('Name: ' + profile.getName());
+            //    console.log('Image URL: ' + profile.getImageUrl());
+            //    console.log('Email: ' + profile.getEmail());
+            //};
             LoginCtrl.prototype.authenticate = function (provider) {
                 console.log(provider);
                 this.$auth.authenticate(provider).then(function (response) {

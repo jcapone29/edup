@@ -29,7 +29,7 @@ span {
 }
 
 .maindashnav{
-    background: #020304;
+    background: #101922;
     border-bottom: 3px solid #3e576c;
     width:100%;
     display:block;
@@ -120,3 +120,13 @@ span {
     
 }
 
+.ScorePostData{
+    background:red;
+}
+
+
+.logoutButton{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

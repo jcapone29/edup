@@ -12,6 +12,14 @@
     .userdashboardheadshot {
         top: 0 !important;
         left: 0 !important;
-        max-height: 85px !important;
+        max-height: 127px !important;
+        z-index: 0;
+        position: absolute;
+        opacity: 0.78;
     }
+
+    .userprofilecard{
+    height: 95px !important;
+
+}
 }

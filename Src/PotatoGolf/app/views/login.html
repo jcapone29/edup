@@ -11,10 +11,10 @@
                   </div>
                   <div class="logindashfacebook">
                       
-                      <button class="button button-assertive logindashbuttons" ng-click="vm.authenticate('google')">Sign in with Google</button>
+                      <button class="button button-assertive logindashbuttons" data-onsuccess="onSignIn" ng-click="vm.authenticate('google')">Sign in with Google</button>
                   </div>
                   <div>
-                      <button class="button button-positive logindashbuttons " ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
+                      <button class="button button-positive logindashbuttons" ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
                   </div>
               </div>
                 <div class="col-xs-12">
