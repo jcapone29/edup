@@ -3,9 +3,11 @@
 <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
 <link href="Content/ionic.css" rel="stylesheet" />
 <link href="Content/animate.css" rel="stylesheet" />
-<link href="/app/Styles/app.css" rel="stylesheet" />
-<link href="app/Styles/mobile.css" rel="stylesheet" />
-<link href="app/Styles/slideoutbar.css" rel="stylesheet" />
+<link href="app/Styles/web/app.css" rel="stylesheet" />
+<link href="app/Styles/mobile/mobile.css" rel="stylesheet" />
+<link href="app/Styles/web/slideoutbar.css" rel="stylesheet" />
+<link href="Content/hamburgers.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Cinzel|Neucha" rel="stylesheet">
 <script src="Scripts/ionic.bundle.min.js"></script>
 <script src="Scripts/jquery-3.1.0.min.js"></script>
 <script src="Scripts/ngCordova/ng-cordova.min.js"></script>
@@ -13,8 +15,7 @@
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/satellizer/satellizer.min.js"></script>
 <script src="Scripts/moment.min.js"></script>
-<script src="app/Styles/SlideoutNav.js"></script>
-
+<script src="Scripts/SlideoutNav.js"></script>
 <script src="dist/app.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-signin-client_id" content="664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com">
@@ -25,11 +26,11 @@
         <ion-pane ion-side-menu-content>
             <ion-nav-bar class="bar bar-header maindashnav">
                 <ion-nav-buttons side="left">
-                  <div class="mainnavleftbuttons hidemainnavmobile">
+                  <!--<div class="mainnavleftbuttons hidemainnavmobile">
                       <span class="mainnavtext">Daily Fore</span>
                       <span class="mainnavtext">Daily Fore</span>
                       <span class="mainnavtext">Daily Fore</span>
-                  </div>
+                  </div>-->
                     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
                 </ion-nav-buttons>
                 <ion-nav-buttons side="right">
@@ -72,7 +73,7 @@
                 </div>
                 <ion-list>
                     <ion-item ui-sref="dashboard" class="item" menu-close><i class="icon ion-email"></i> Dashboard</ion-item>
-                    <ion-item ui-sref="messageboard" class="item" menu-close><i class="icon ion-email"></i> Message Board</ion-item>
+                    <ion-item ui-sref="collegesearch" class="item" menu-close><i class="icon ion-email"></i>College Search</ion-item>
                     <ion-item ui-sref="tickgraph" class="item" menu-close><i class="ion-person-add"></i> Ghin</ion-item>
                     <ion-item ui-sref="login" class="item logoutButton" menu-close><i class="ion-person-add"></i> Logout </ion-item>
                 </ion-list>
@@ -82,3 +83,4 @@
     </ion-side-menus>
 
 </div>
+

@@ -1,7 +1,7 @@
-﻿
-module Potato.Golf {
+﻿module Potato.Golf {
 
-    export class DashboardCtrl {
+    export class CollegeSearchCtrl {
+
 
         public static $inject: string[] = ["$scope", "DashboardSvc", "$state"];
 
@@ -11,5 +11,5 @@ module Potato.Golf {
         }
 
     }
-        app.controller("DashboardCtrl", DashboardCtrl);
+    app.controller("CollegeSearchCtrl", CollegeSearchCtrl);
 }

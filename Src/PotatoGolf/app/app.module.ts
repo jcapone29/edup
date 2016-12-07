@@ -7,22 +7,26 @@
             .state('login', {
                 url: '/login',
                 templateUrl: 'app/views/login.html',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl',
+                 controllerAs: 'vm'
             })
             .state('dashboard', {
                 url: '/dashboard',
                 templateUrl: 'app/views/dashboard.html',
-                controller: 'DashboardCtrl'
+                controller: 'DashboardCtrl',
+                controllerAs: 'vm'
             })
-            .state('messageboard', {
-                url: '/messageboard',
-                templateUrl: 'app/views/messageboard.html',
-                controller: 'DashboardCtrl'
+            .state('collegesearch', {
+                url: '/collegesearch',
+                templateUrl: 'app/views/college-search.html',
+                controller: 'CollegeSearchCtrl',
+                controllerAs: 'vm'
             })
             .state('tickgraph', {
                 url: '/tickgraph',
                 templateUrl: 'app/views/tickgraph.html',
-                controller: 'DashboardCtrl'
+                controller: 'DashboardCtrl',
+                controllerAs: 'vm'
             })
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/login');

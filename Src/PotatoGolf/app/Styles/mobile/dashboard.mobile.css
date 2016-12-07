@@ -1,0 +1,7 @@
+﻿/*Mobile Features*/
+@media screen and (max-width: 767px) {
+    .usermaincard {
+        width: 94%;
+        margin: 10px;
+    }
+}

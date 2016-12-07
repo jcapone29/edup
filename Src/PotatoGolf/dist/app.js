@@ -8,22 +8,26 @@ var Potato;
                 .state('login', {
                 url: '/login',
                 templateUrl: 'app/views/login.html',
-                controller: 'LoginCtrl'
+                controller: 'LoginCtrl',
+                controllerAs: 'vm'
             })
                 .state('dashboard', {
                 url: '/dashboard',
                 templateUrl: 'app/views/dashboard.html',
-                controller: 'DashboardCtrl'
+                controller: 'DashboardCtrl',
+                controllerAs: 'vm'
             })
-                .state('messageboard', {
-                url: '/messageboard',
-                templateUrl: 'app/views/messageboard.html',
-                controller: 'DashboardCtrl'
+                .state('collegesearch', {
+                url: '/collegesearch',
+                templateUrl: 'app/views/college-search.html',
+                controller: 'CollegeSearchCtrl',
+                controllerAs: 'vm'
             })
                 .state('tickgraph', {
                 url: '/tickgraph',
                 templateUrl: 'app/views/tickgraph.html',
-                controller: 'DashboardCtrl'
+                controller: 'DashboardCtrl',
+                controllerAs: 'vm'
             });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');
@@ -64,13 +68,28 @@ var Potato;
 (function (Potato) {
     var Golf;
     (function (Golf) {
+        var CollegeSearchCtrl = (function () {
+            function CollegeSearchCtrl($scope, dashsrv, $state) {
+                this.$scope = $scope;
+                this.dashsrv = dashsrv;
+                this.$state = $state;
+            }
+            CollegeSearchCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
+            return CollegeSearchCtrl;
+        })();
+        Golf.CollegeSearchCtrl = CollegeSearchCtrl;
+        Golf.app.controller("CollegeSearchCtrl", CollegeSearchCtrl);
+    })(Golf = Potato.Golf || (Potato.Golf = {}));
+})(Potato || (Potato = {}));
+var Potato;
+(function (Potato) {
+    var Golf;
+    (function (Golf) {
         var DashboardCtrl = (function () {
             function DashboardCtrl($scope, dashsrv, $state) {
                 this.$scope = $scope;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
-                this.bio = 'test';
-                this.analysisSeries = new Array();
             }
             DashboardCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
             return DashboardCtrl;
@@ -93,28 +112,7 @@ var Potato;
                 this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
                 this.bio = 'test';
                 this.analysisSeries = new Array();
-                $scope.authenticate = function (provider) {
-                    console.log(provider);
-                    $auth.authenticate(provider);
-                };
             }
-            //    onSignIn(googleUser: any) {
-            //    var profile = googleUser.getBasicProfile();
-            //    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            //    console.log('Name: ' + profile.getName());
-            //    console.log('Image URL: ' + profile.getImageUrl());
-            //    console.log('Email: ' + profile.getEmail());
-            //};
-            LoginCtrl.prototype.authenticate = function (provider) {
-                console.log(provider);
-                this.$auth.authenticate(provider).then(function (response) {
-                    console.log(response);
-                }).catch(function (response) {
-                    console.log(response);
-                });
-                ;
-            };
-            ;
             LoginCtrl.prototype.getLoginCache = function () {
                 this.$state.go("dashboard");
             };

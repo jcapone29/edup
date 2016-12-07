@@ -22,43 +22,35 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\CourseImgs\Augusta-National-Golf-Course-in-Georgia-900x563.jpg" />
-    <Content Include="app\CourseImgs\goodwp.com_19594.jpg" />
-    <Content Include="app\CourseImgs\Pebble_Beach.jpg" />
-    <Content Include="app\CourseImgs\Pine_Vally.JPG" />
-    <Content Include="app\CourseImgs\Sebonack-Golf-Course-in-Southampton-900x603.jpg" />
-    <Content Include="app\CourseImgs\St.-Andrews-Golf-Course-900x600.jpg" />
-    <Content Include="app\Styles\app.css" />
-    <Content Include="app\Styles\dashboard.css" />
-    <Content Include="app\Styles\login.css" />
-    <Content Include="app\Styles\mobile.css" />
-    <Content Include="app\Styles\slideoutbar.css" />
-    <Content Include="app\Styles\SlideoutNav.js" />
+    <Content Include="app\Styles\mobile\collegesearch.mobile.css" />
+    <Content Include="app\Styles\web\app.css" />
+    <Content Include="app\Styles\web\collegesearch.css" />
+    <Content Include="app\Styles\web\dashboard.css" />
+    <Content Include="app\Styles\mobile\dashboard.mobile.css" />
+    <Content Include="app\Styles\web\login.css" />
+    <Content Include="app\Styles\mobile\mobile.css" />
+    <Content Include="app\Styles\web\slideoutbar.css" />
+    <Content Include="Images\education-icon.png" />
+    <Content Include="Images\filled-filter-xl.png" />
+    <Content Include="Scripts\SlideoutNav.js" />
     <Content Include="app\views\dashboard.html" />
     <Content Include="app\views\login.html" />
-    <Content Include="app\views\messageboard.html" />
+    <Content Include="app\views\college-search.html" />
     <Content Include="app\views\tickgraph.html" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\hamburgers.css" />
+    <Content Include="Content\hamburgers.min.css" />
     <Content Include="Content\ionic.css" />
     <Content Include="Content\ionic.min.css" />
     <Content Include="Content\select.css" />
     <Content Include="Content\select.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
-    <Content Include="Images\195540.svg" />
-    <Content Include="Images\Biltmore_Score_Card-2.jpg" />
-    <Content Include="Images\golf-icon-70764.png" />
-    <Content Include="Images\golf-sports-icons-70770.png" />
-    <Content Include="Images\golf_sunset.jpg" />
     <Content Include="Images\headshot.jpg" />
-    <Content Include="Images\icon175x175.jpeg" />
-    <Content Include="Images\person-golfing-hi.png" />
-    <Content Include="Images\scorecard_256.png" />
-    <Content Include="Images\sunset_slide.jpg" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -876,6 +868,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\controllers\college_search.controller.ts" />
     <TypeScriptCompile Include="app\controllers\dashboard.controller.ts" />
     <TypeScriptCompile Include="app\controllers\login.controller.ts" />
     <TypeScriptCompile Include="app\Entities\Entities.ts" />

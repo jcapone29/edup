@@ -1,0 +1,42 @@
+﻿.filterheader{
+    width: 85px;
+    border: 1px solid red;
+    height: 100%;
+    margin: 1px;
+    float: right;
+}
+
+.college-search-header{
+    width:100%;
+    height:40px;
+    background: #eeeeee;
+}
+.filter-nav{
+     width: 100%;
+    height: 45px;
+    overflow: hidden;
+    padding-right: 90px;
+    position: absolute;
+}
+
+.maindashlowermenubutton:not(:last-child):nth-last-child(2) {
+    -webkit-transition-delay: 50ms;
+    transition-delay: 20ms;
+    background-image: url('../../../Images/filled-filter-xl.png');
+    background-size: contain;
+}
+
+.maindashlowermenubutton:not(:last-child):nth-last-child(3) {
+    -webkit-transition-delay: 75ms;
+    transition-delay: 40ms;
+    background-image: url('../../Images/scorecard_256.png');
+    /*background-image: url('../../Images/Biltmore_Score_Card-2.jpg');*/
+    background-size: contain;
+}
+
+.maindashlowermenubutton:not(:last-child):nth-last-child(4) {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 60ms;
+  background-image: url('../../Images/icon175x175.jpeg');
+  background-size: contain;
+}
