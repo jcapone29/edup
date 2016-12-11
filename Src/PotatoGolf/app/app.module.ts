@@ -27,6 +27,11 @@
                 templateUrl: 'app/views/tickgraph.html',
                 controller: 'DashboardCtrl',
                 controllerAs: 'vm'
+            }).state('filters', {
+                url: '/filters',
+                templateUrl: 'app/views/filters.html',
+                controller: 'FiltersCtrl',
+                controllerAs: 'vm'
             })
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/login');

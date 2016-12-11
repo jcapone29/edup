@@ -82,14 +82,12 @@ span {
     outline: none;
     padding: 1px 10px 0;
     color: #000;
-
-
     vertical-align: middle;
     transition: all 0.15s cubic-bezier(0.5, 0.2, 0, 1);
 }
 
 .mainnavleftbuttons{
-        width: 100%;
+    width: 100%;
     position: absolute;
     top: -3px
 }
@@ -109,10 +107,7 @@ span {
     height: 100%;
 }
 
-.item{
-    border:none;
-    
-}
+
 
 .ScorePostData{
     background:red;
@@ -185,3 +180,19 @@ span {
     background-color: #eeeeee;
 }
 
+
+
+.progress-bar-success {
+    background-image: -webkit-linear-gradient(top,#33a0db 0,#5997d1 100%) !important;
+    background-image: -o-linear-gradient(top,#33a0db 0,#5997d1 100%) !important;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#33a0db),to(#5997d1)) !important;
+    background-image: linear-gradient(to bottom,#33a0db 0,#5997d1 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0) !important;
+    background-repeat: repeat-x;
+}
+
+.card {
+        padding-top: 1px;
+    padding-bottom: 1px;
+    box-shadow: 2px 5px 4px rgba(25, 189, 155, 0.37) !important;
+}

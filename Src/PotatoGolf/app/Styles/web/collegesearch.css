@@ -40,3 +40,41 @@
   background-image: url('../../Images/icon175x175.jpeg');
   background-size: contain;
 }
+
+
+.college-card-results{
+        background: #f4f4f4;
+}
+
+
+
+.college-search-filter-header{
+    height: 30px;
+    position: fixed;
+    width: 100%;
+    top: 44px;
+    background: rgba(154, 188, 217, 0.21);
+}
+
+.college-search-main-wrapper{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 75px;
+    overflow:auto;
+    padding-bottom: 90px;
+}
+
+.filter-button{
+    position: absolute;
+    right: 2px;
+    font-size: 22px;
+    color: #697784;
+}
+
+.input-search-college{
+    position: absolute;
+    padding: 0px;
+    padding-right: 24px;
+    width: 100%;
+}

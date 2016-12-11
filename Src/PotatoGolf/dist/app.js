@@ -28,6 +28,11 @@ var Potato;
                 templateUrl: 'app/views/tickgraph.html',
                 controller: 'DashboardCtrl',
                 controllerAs: 'vm'
+            }).state('filters', {
+                url: '/filters',
+                templateUrl: 'app/views/filters.html',
+                controller: 'FiltersCtrl',
+                controllerAs: 'vm'
             });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');
@@ -73,6 +78,7 @@ var Potato;
                 this.$scope = $scope;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
+                this.testing = [1, 2, 3, 4, 5, 6];
             }
             CollegeSearchCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
             return CollegeSearchCtrl;
@@ -96,6 +102,23 @@ var Potato;
         })();
         Golf.DashboardCtrl = DashboardCtrl;
         Golf.app.controller("DashboardCtrl", DashboardCtrl);
+    })(Golf = Potato.Golf || (Potato.Golf = {}));
+})(Potato || (Potato = {}));
+var Potato;
+(function (Potato) {
+    var Golf;
+    (function (Golf) {
+        var FiltersCtrl = (function () {
+            function FiltersCtrl($scope, dashsrv, $state) {
+                this.$scope = $scope;
+                this.dashsrv = dashsrv;
+                this.$state = $state;
+            }
+            FiltersCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
+            return FiltersCtrl;
+        })();
+        Golf.FiltersCtrl = FiltersCtrl;
+        Golf.app.controller("FiltersCtrl", FiltersCtrl);
     })(Golf = Potato.Golf || (Potato.Golf = {}));
 })(Potato || (Potato = {}));
 var Potato;
