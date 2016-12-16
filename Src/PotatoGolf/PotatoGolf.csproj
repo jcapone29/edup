@@ -23,15 +23,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\Styles\mobile\collegesearch.mobile.css" />
+    <Content Include="app\Styles\mobile\filter.mobile.css" />
     <Content Include="app\Styles\web\app.css" />
     <Content Include="app\Styles\web\collegesearch.css" />
     <Content Include="app\Styles\web\dashboard.css" />
     <Content Include="app\Styles\mobile\dashboard.mobile.css" />
+    <Content Include="app\Styles\web\filters.css" />
     <Content Include="app\Styles\web\login.css" />
     <Content Include="app\Styles\mobile\mobile.css" />
     <Content Include="app\Styles\web\slideoutbar.css" />
+    <Content Include="app\views\filters.html" />
     <Content Include="Images\education-icon.png" />
     <Content Include="Images\filled-filter-xl.png" />
+    <Content Include="Scripts\ionic.contrib.drawer.js" />
     <Content Include="Scripts\SlideoutNav.js" />
     <Content Include="app\views\dashboard.html" />
     <Content Include="app\views\login.html" />
@@ -870,8 +874,10 @@
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\controllers\college_search.controller.ts" />
     <TypeScriptCompile Include="app\controllers\dashboard.controller.ts" />
+    <TypeScriptCompile Include="app\controllers\filters.controller.ts" />
     <TypeScriptCompile Include="app\controllers\login.controller.ts" />
     <TypeScriptCompile Include="app\Entities\Entities.ts" />
+    <TypeScriptCompile Include="app\Entities\InstitutionInfo.ts" />
     <TypeScriptCompile Include="app\services\dashboard.service.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-sortable.d.ts" />
@@ -892,6 +898,7 @@
     <TypeScriptCompile Include="Scripts\typings\moment\moment-node.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\moment\moment.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
+    <TypeScriptCompile Include="typings\google.maps.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\version.json" />

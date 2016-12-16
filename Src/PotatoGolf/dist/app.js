@@ -2,7 +2,7 @@ var Potato;
 (function (Potato) {
     var Golf;
     (function (Golf) {
-        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer']);
+        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer']);
         Golf.app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
             $stateProvider
                 .state('login', {
@@ -79,7 +79,31 @@ var Potato;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
                 this.testing = [1, 2, 3, 4, 5, 6];
+                this.instituionInfo = new Array();
+                this.getInstitutionMeta();
             }
+            CollegeSearchCtrl.prototype.initMap = function (info) {
+                info.UnitId;
+                var latlng = new google.maps.LatLng(+info.Latitude, +info.Longitude);
+                var myOptions = {
+                    zoom: 12,
+                    center: latlng,
+                    mapMaker: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                };
+                var map = new google.maps.Map(document.getElementById(info.UnitId), myOptions);
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: info.Institution_Name
+                });
+            };
+            CollegeSearchCtrl.prototype.getInstitutionMeta = function () {
+                var _this = this;
+                this.dashsrv.getInstitustionMeta().then(function (response) {
+                    _this.instituionInfo = response;
+                });
+            };
             CollegeSearchCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
             return CollegeSearchCtrl;
         })();
@@ -156,12 +180,19 @@ var Potato;
             return UserInfo;
         })();
         Golf.UserInfo = UserInfo;
-        var ActiveSession = (function () {
-            function ActiveSession() {
+    })(Golf = Potato.Golf || (Potato.Golf = {}));
+})(Potato || (Potato = {}));
+var Potato;
+(function (Potato) {
+    var Golf;
+    (function (Golf) {
+        var InstituionInfo = (function () {
+            function InstituionInfo() {
+                this.flip = false;
             }
-            return ActiveSession;
+            return InstituionInfo;
         })();
-        Golf.ActiveSession = ActiveSession;
+        Golf.InstituionInfo = InstituionInfo;
     })(Golf = Potato.Golf || (Potato.Golf = {}));
 })(Potato || (Potato = {}));
 var Potato;
@@ -172,7 +203,8 @@ var Potato;
             function DashboardSvc($http, $q) {
                 this.$http = $http;
                 this.$q = $q;
-                this.api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/Hedge/";
+                this.api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
+                //api = "http://localhost:51201/api/edup/"
                 //CSS
                 this.sideMenuState = false;
                 this.showSideNavToggle = false;
@@ -180,8 +212,8 @@ var Potato;
                 this.currentActiveUser = new Golf.UserInfo();
                 this.getLogin();
             }
-            DashboardSvc.prototype.getTickets = function () {
-                // return this.$http.get(this.api + "ticker").then(r => r.data);
+            DashboardSvc.prototype.getInstitustionMeta = function () {
+                return this.$http.get(this.api + "meta").then(function (r) { return r.data; });
             };
             DashboardSvc.prototype.getLogin = function () {
                 this.currentActiveUser.FirstName = "Joe";

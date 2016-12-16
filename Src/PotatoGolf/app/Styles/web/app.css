@@ -196,3 +196,70 @@ span {
     padding-bottom: 1px;
     box-shadow: 2px 5px 4px rgba(25, 189, 155, 0.37) !important;
 }
+
+
+drawer {
+  display: block;
+  position: fixed;
+  width: 60px;
+  height: 100%;
+  z-index: 100;
+  background-color: white;
+}
+
+.drawer-opener-button{
+    width: 60px;
+    position: absolute;
+    left: 0;
+    height: 41px;
+    top: 0px;
+    background: rgba(236, 236, 236, 0.7);
+}
+
+.drawer-opener-button > button {
+    margin-top: 5px;
+}
+
+.drawer-text{
+    width: 66px;
+    height: 60px;
+    padding: 16px 60px 16px 4px;
+    background: #ececec;
+    border: none;
+    border-bottom: 2px solid #9abcd9;
+}
+.drawer-info{
+    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.draw-icon{
+        width: 100%;
+    text-align: center;
+    left: 0;
+    position: absolute;
+    font-size: 23px;
+    color: #479cd6;
+}
+
+
+drawer.animate {
+  -webkit-transition: 300ms all ease;
+  transition: 300ms all ease;
+}
+
+drawer.left {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
+}
+drawer.right {
+  right: 0;
+  top: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  box-shadow: -1px 0px 10px rgba(0,0,0,0.3);
+}

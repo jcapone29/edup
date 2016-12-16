@@ -2,8 +2,8 @@
 
     export class DashboardSvc {
 
-        api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/Hedge/";
-
+        api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
+        //api = "http://localhost:51201/api/edup/"
         //CSS
         sideMenuState = false;
         showSideNavToggle = false;
@@ -21,9 +21,9 @@
         }
 
 
-        getTickets() {
+        getInstitustionMeta() {
 
-           // return this.$http.get(this.api + "ticker").then(r => r.data);
+            return this.$http.get(this.api + "meta").then(r => r.data);
 
         }
 

@@ -1,10 +1,9 @@
-﻿<link href="../app/Styles/web/collegesearch.css" rel="stylesheet" />
-<link href="../app/Styles/mobile/collegesearch.mobile.css" rel="stylesheet" />
-<div class="college-search-main-wrapper">
+﻿<link href="app/Styles/web/collegesearch.css" rel="stylesheet" />
+<link href="app/Styles/mobile/collegesearch.mobile.css" rel="stylesheet" />
     <div class="college-search-filter-header">
         <div class="item-input-inset input-search-college">
             <label class="item-input-wrapper" style="border-radius: 0px; background: transparent;">
-                <input type="text" placeholder="Search">
+                <input type="text" placeholder="Search" ng-model="metainfosearch">
             </label>
         </div>
         <div class="filter-button">
@@ -12,15 +11,23 @@
         </div>
     </div>
     <div class="college-results-list">
-        <div class="list">
-            <div class="list card animated fadeInUp" ng-repeat="test in vm.testing" >
-                <div class="item item-body college-card-results" >
-                    <img class="img-responsive" src="https://unsplash.it/350/150/?random">
-                    <p>
-                        Testing Testing Testing Testing Testing Testing Testing Testing Testing
-                    </p>
+        <div class="list" style="height:100%; ">
+            <div class="list card animated fadeInUp col-xs-12 col-lg-5 col-sm-6 col-md-6 college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" ng-class="{'college-search-zoom' : info.flip}">
+                <div class="college-search-card-front" ng-class="{'college-search-card-front-flip' : info.flip}" ng-click="info.flip = !info.flip; vm.initMap(info)">
+                    <div class="item item-body college-card-results">
+                        <img class="img-responsive" src="https://unsplash.it/350/150/?random">
+                        <p>
+                            {{info.Institution_Name}}
+                        </p>
+                      
+                    </div>
                 </div>
-            </div>            
+                <div class="college-search-card-back" ng-class="{'college-search-card-back-flip' : info.flip}">
+                    <button class="btn btn-success"  ng-click="info.flip = !info.flip">Test</button>
+                    {{info}}
+                    <div id="{{info.UnitId}}" style="height:100%;"></div>
+                </div>
+            </div>
         </div>
     </div>
     <nav class="maindashmenubtncontainer">
@@ -29,4 +36,4 @@
         <a class="maindashlowermenubutton" tooltip="Filters" ui-sref="dashboard"></a>
         <a class="maindashlowermenubutton"></a>
     </nav>
-</div>
+

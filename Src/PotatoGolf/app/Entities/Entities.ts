@@ -10,15 +10,9 @@
         Handicap: number;
         Bio: string;
         ProfilePicture: string;
-        SessionInfo: ActiveSession;
+    
     }
 
 
-    export class ActiveSession {
-
-        Token: string;
-        ExerationDateTime: Date;
-        cuurentlyActive: boolean;
-
-    }
+    
 }
