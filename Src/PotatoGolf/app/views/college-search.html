@@ -1,6 +1,7 @@
 ﻿<link href="app/Styles/web/collegesearch.css" rel="stylesheet" />
 <link href="app/Styles/mobile/collegesearch.mobile.css" rel="stylesheet" />
     <div class="college-search-filter-header">
+        <md-progress-linear md-mode="indeterminate" ng-if="vm.instituionInfo.length === 0"></md-progress-linear>
         <div class="item-input-inset input-search-college">
             <label class="item-input-wrapper" style="border-radius: 0px; background: transparent;">
                 <input type="text" placeholder="Search" ng-model="metainfosearch">
@@ -11,22 +12,31 @@
         </div>
     </div>
     <div class="college-results-list">
-        <div class="list" style="height:100%; ">
-            <div class="list card animated fadeInUp col-xs-12 col-lg-5 col-sm-6 col-md-6 college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" ng-class="{'college-search-zoom' : info.flip}">
-                <div class="college-search-card-front" ng-class="{'college-search-card-front-flip' : info.flip}" ng-click="info.flip = !info.flip; vm.initMap(info)">
+        <div class="list" style="height:100%;">
+            <div class="col-sm-6 col-md-4 list animated fadeInUp college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" >  
                     <div class="item item-body college-card-results">
-                        <img class="img-responsive" src="https://unsplash.it/350/150/?random">
-                        <p>
-                            {{info.Institution_Name}}
-                        </p>
+                        <div>
+                            <div class="college-logo-img">
+                                <img class="img-responsive" src="https://unsplash.it/350/150/?random">
+
+                            </div>
+                            <div class="college-card-image-side-nav">
+                                <i class="ion-android-star-outline" style="font-size: 35px"></i>
+                                <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
+                                <i class="ion-location" style="font-size: 35px"></i>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="card-info-bottom-container">
+                            <p>
+                                {{info.Institution_Name}}
+                            </p>
+                        </div>
+
                       
                     </div>
-                </div>
-                <div class="college-search-card-back" ng-class="{'college-search-card-back-flip' : info.flip}">
-                    <button class="btn btn-success"  ng-click="info.flip = !info.flip">Test</button>
-                    {{info}}
-                    <div id="{{info.UnitId}}" style="height:100%;"></div>
-                </div>
             </div>
         </div>
     </div>

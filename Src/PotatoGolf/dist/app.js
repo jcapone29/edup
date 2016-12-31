@@ -1,8 +1,9 @@
+'use strict';
 var Potato;
 (function (Potato) {
     var Golf;
     (function (Golf) {
-        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer']);
+        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer', 'ngMaterial']);
         Golf.app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
             $stateProvider
                 .state('login', {
@@ -116,12 +117,19 @@ var Potato;
     var Golf;
     (function (Golf) {
         var DashboardCtrl = (function () {
-            function DashboardCtrl($scope, dashsrv, $state) {
+            function DashboardCtrl($scope, dashsrv, $state, $mdSidenav) {
                 this.$scope = $scope;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
+                this.$mdSidenav = $mdSidenav;
             }
-            DashboardCtrl.$inject = ["$scope", "DashboardSvc", "$state"];
+            DashboardCtrl.prototype.toggleLeft = function () {
+                this.$mdSidenav('left').toggle();
+            };
+            DashboardCtrl.prototype.buildToggler = function () {
+                return;
+            };
+            DashboardCtrl.$inject = ["$scope", "DashboardSvc", "$state", '$mdSidenav'];
             return DashboardCtrl;
         })();
         Golf.DashboardCtrl = DashboardCtrl;
@@ -150,20 +158,90 @@ var Potato;
     var Golf;
     (function (Golf) {
         var LoginCtrl = (function () {
-            function LoginCtrl($scope, dashsrv, $state, $auth, $ionicSideMenuDelegate) {
-                //this.$ionicSideMenuDelegate.canDragContent(this.dashsrv.showSideNavToggle);
+            function LoginCtrl($scope, dashsrv, $state, $auth, $ionicSideMenuDelegate, $window) {
                 this.$scope = $scope;
                 this.dashsrv = dashsrv;
                 this.$state = $state;
                 this.$auth = $auth;
                 this.$ionicSideMenuDelegate = $ionicSideMenuDelegate;
-                this.bio = 'test';
-                this.analysisSeries = new Array();
+                this.$window = $window;
+                this.instituionInfo = new Array();
+                this.sampleInstiution = new Array();
+                this.infoWindow = new google.maps.InfoWindow();
+                //this.$ionicSideMenuDelegate.canDragContent(this.dashsrv.showSideNavToggle);
+                this.getInstitutionMeta();
+                window.onscroll = function () { this.headerScroll(); };
             }
             LoginCtrl.prototype.getLoginCache = function () {
                 this.$state.go("dashboard");
             };
-            LoginCtrl.$inject = ["$scope", "DashboardSvc", "$state", "$auth", "$ionicSideMenuDelegate"];
+            LoginCtrl.prototype.getInstitutionMeta = function () {
+                var _this = this;
+                this.dashsrv.getInstitustionMeta().then(function (response) {
+                    _this.instituionInfo = response;
+                    _this.drawMap();
+                });
+            };
+            LoginCtrl.prototype.headerScroll = function () {
+                console.log('hit');
+                var header = $('.main-content-wrapper');
+                var range = 200;
+                var scrollTop = $(this).scrollTop();
+                var offset = header.offset().top;
+                var height = header.outerHeight();
+                offset = offset + height / 2;
+                var calc = 1 - (scrollTop - offset + range) / range;
+                header.css({ 'opacity': calc });
+                if (calc > 1) {
+                    header.css({ 'opacity': 1 });
+                }
+                else if (calc < 0) {
+                    header.css({ 'opacity': 0 });
+                }
+                console.log(calc);
+            };
+            LoginCtrl.prototype.drawMap = function () {
+                var _this = this;
+                this.infoWindow = new google.maps.InfoWindow();
+                this.infoWindow.setContent;
+                var myOptions = {
+                    zoom: 3,
+                    center: new google.maps.LatLng(39.909736, -98.522109),
+                    mapMaker: false,
+                    scrollwheel: false,
+                    navigationControl: false,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    draggable: false,
+                    zoomControl: false,
+                    disableDoubleClickZoom: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                this.map = new google.maps.Map(document.getElementById('sampleMap'), myOptions);
+                _.forEach(this.instituionInfo, function (i) {
+                    var marker = _this.addWaterMakers(i);
+                    marker.getIcon();
+                    _this.addMapIconListener(marker);
+                });
+                //google.maps.event.addDomListener(window, "load", function () { this.map });
+            };
+            LoginCtrl.prototype.addWaterMakers = function (info) {
+                return new google.maps.Marker({
+                    position: new google.maps.LatLng(+info.Latitude, +info.Longitude),
+                    map: this.map,
+                    title: info.Institution_Name,
+                    icon: "http://1.bp.blogspot.com/_GZzKwf6g1o8/S6xwK6CSghI/AAAAAAAAA98/_iA3r4Ehclk/s1600/marker-green.png"
+                });
+            };
+            LoginCtrl.prototype.addMapIconListener = function (marker) {
+                this.infoWindow.addListener("click", function () {
+                    google.maps.event.addListener(marker, "click", function () {
+                        this.infoWindow.setContent('Testing');
+                        this.infoWindow.open(this.map, this);
+                    });
+                });
+            };
+            LoginCtrl.$inject = ["$scope", "DashboardSvc", "$state", "$auth", "$ionicSideMenuDelegate", '$window'];
             return LoginCtrl;
         })();
         Golf.LoginCtrl = LoginCtrl;

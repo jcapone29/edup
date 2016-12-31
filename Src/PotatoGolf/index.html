@@ -3,23 +3,25 @@
 <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
 <link href="Content/ionic.css" rel="stylesheet" />
 <link href="Content/animate.css" rel="stylesheet" />
+<link href="Content/angular-material.min.css" rel="stylesheet" />
 <link href="app/Styles/web/app.css" rel="stylesheet" />
 <link href="app/Styles/mobile/mobile.css" rel="stylesheet" />
 <link href="app/Styles/web/slideoutbar.css" rel="stylesheet" />
 <link href="Content/hamburgers.min.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Cinzel|Neucha" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel|Neucha|Merriweather|Raleway" rel="stylesheet">
 
 <script src="Scripts/ionic.bundle.min.js"></script>
 <script src="Scripts/jquery-3.1.0.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIqMqcjbirzk4_kCiwBLP8AZxrWympwqU" async defer></script>
 <script src="Scripts/ngCordova/ng-cordova.min.js"></script>
 <script src="Scripts/lodash.min.js"></script>
-
+<script src="Scripts/angular-aria.min.js"></script>
 <script src="Scripts/ionic.contrib.drawer.js"></script>
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/satellizer/satellizer.min.js"></script>
 <script src="Scripts/moment.min.js"></script>
 <script src="Scripts/SlideoutNav.js"></script>
+<script src="Scripts/angular-material/angular-material.min.js"></script>
 <script src="dist/app.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-signin-client_id" content="664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com">
@@ -30,77 +32,70 @@
         <ion-pane ion-side-menu-content>
             <ion-nav-bar class="bar bar-header maindashnav">
                 <ion-nav-buttons side="left">
-                  <!--<div class="mainnavleftbuttons hidemainnavmobile">
-                      <span class="mainnavtext">Daily Fore</span>
-                      <span class="mainnavtext">Daily Fore</span>
-                      <span class="mainnavtext">Daily Fore</span>
-                  </div>-->
                     <div class="drawer-opener-button">
-                        <button ng-click="toggleDrawer()" class="button button-icon icon hamburger hamburger--collapse js-hamburger" ng-class="{'is-active': sidemenuopen}">
+                        <md-button ng-click="vm.toggleLeft()" class="button button-icon icon hamburger hamburger--collapse js-hamburger" ng-class="{'is-active': vm.$mdSidenav('left').isOpen()}">
                             <div class="hamburger-box">
                                 <div class="hamburger-inner"></div>
                             </div>
-                        </button>
+                        </md-button>
                     </div>
+                    <ul class="nav navbar-nav desktop-nav-buttons">
+                        <li ui-sref="dashboard">Profile</li>
+                        <li ui-sref="collegesearch">College Finder</li>
+                        <li ui-sref="filters">My Filters</li>
+                        <li ui-sref="dashboard" ng-mouseover="hover = true" ng-mouseleave="hover=false">
+                            <span class="glyphicon glyphicon-eye-open animated fadeIn" ng-if="hover"></span>
+                        Watch List
+                        </li>
+                    </ul>
                 </ion-nav-buttons>
                 <ion-nav-buttons side="right">
-                    <!--<div class="dashuserinfo">
-                        <ul>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle " data-toggle="dropdown"><span class="ion-person dashuserinfo"></span> <b class="caret"></b></a>
-                                <ul class="dropdown-menu pull-right animated fadeInLeft">
-                                    <li><a href="#">{{vm.dashsrv.dahsuserdropdown}}</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>-->
+                    <ul class="nav navbar-nav nav navbar-nav desktop-nav-buttons" style="right: 0;top: -1px;width: 113px;">
+                        <li>
+                           
+                                <i class="ion-person" style="right: 12px; top: -14px;position: absolute;font-size: 16px;"></i>
+                                <span> Sign In</span>
+             
+                        </li>
+                    </ul>
                 </ion-nav-buttons>
 
                 <ion-nav-back-button class="button-icon"><span class="icon ion-ios7-arrow-left"></span></ion-nav-back-button>
 
             </ion-nav-bar>
             <ion-nav-view>
-            <!--<div ui-view class="dashview"></div>-->
+                <!--<div ui-view class="dashview"></div>-->
             </ion-nav-view>
         </ion-pane>
-
-        <drawer side="left" style="top:44px;">
-            
-            <ion-content has-header="true">
-                <ul style="height:100%; background:#ececec;">
-                    <li  ui-sref="dashboard" ng-click="toggleDrawer()" class="item drawer-text" menu-close>
-                    <i class="icon ion-home draw-icon"></i>
+        <md-sidenav class="md-sidenav-left drawer" md-component-id="left" md-whiteframe-4dp style="top:44px;">
+            <md-content layout-margin style="margin:0; height:100%;">
+                <ul style="height:100%; background:#ececec;margin:0;">
+                    <li ui-sref="dashboard" ng-click="vm.toggleLeft()" class="item drawer-text" menu-close>
+                        <i class="icon ion-home draw-icon"></i>
                         <span class="drawer-info">Portfolio</span>
                     </li>
-                    <li ui-sref="collegesearch" ng-click="toggleDrawer()" class="item drawer-text" menu-close>
+                    <li ui-sref="collegesearch" ng-click="vm.toggleLeft()" class="item drawer-text" menu-close>
                         <span class="icon ion-compass draw-icon"></span>
                         <span class="drawer-info">College Search</span>
-                        
+
                     </li>
-                    <li ui-sref="filters" ng-click="toggleDrawer()" class="item drawer-text" menu-close>
+                    <li ui-sref="filters" ng-click="vm.toggleLeft()" class="item drawer-text" menu-close>
                         <i class="icon ion-funnel draw-icon"></i>
                         <span class="drawer-info">Preferences</span>
                     </li>
-                    <li ui-sref="tickgraph" ng-click="toggleDrawer()" class="item drawer-text" menu-close>
+                    <li ui-sref="tickgraph" ng-click="vm.toggleLeft()" class="item drawer-text" menu-close>
                         <i class="icon ion-eye draw-icon"></i>
                         <span class="drawer-info">Watch List</span>
-                        
+
                     </li>
-                    <li ui-sref="login" ng-click="toggleDrawer()" class="item drawer-text" menu-close style="position: absolute;bottom: 46px; border-bottom:none; border-top: 2px solid #9abcd9;">
+                    <li ui-sref="login" ng-click="vm.toggleLeft()" class="item drawer-text" menu-close style="position: absolute;bottom: 46px; border-bottom:none; border-top: 2px solid #9abcd9;">
                         <i class="icon ion-email draw-icon"></i>
                         <span class="drawer-info">Logout</span>
                     </li>
                 </ul>
-               
-            </ion-content>
+            </md-content>
 
-        </drawer>
+        </md-sidenav>
     </ion-side-menus>
 
 </div>

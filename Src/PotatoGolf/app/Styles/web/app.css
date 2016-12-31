@@ -6,40 +6,40 @@ span {
     font-style: italic;
 }
 
-.navbar-header{
-        width: 100%;
+.navbar-header {
+    width: 100%;
     position: absolute !important;
 }
 
-.dashuser{
+.dashuser {
     position: absolute;
-    right:0;
+    right: 0;
 }
 
-.dashview{
+.dashview {
     height: 100%;
     width: 100%;
     position: absolute;
     padding-top: 50px;
 }
 
-.dashnavleft{
+.dashnavleft {
     position: absolute;
     left: 0;
 }
 
-.maindashnav{
-    background: #19BD9B;
-    border-bottom: 3px solid #9abcd9;   
-    width:100%;
-    display:block;
-    
+.maindashnav {
+    background: #01579b;
+    /*border-bottom: 3px solid #FFFFFF;*/
+    width: 100%;
+    display: block;
 }
 
 .golfperson {
     height: 35px;
     width: 42px;
 }
+
 .bar-dark .button.button-clear {
     border-color: transparent;
     background: none;
@@ -47,34 +47,34 @@ span {
     color: #38f61b;
     font-size: 17px;
 }
-.mainviewwrapper{
+
+.mainviewwrapper {
     position: relative;
     height: 100%;
     width: 100%;
     top: 43px;
-    overflow:auto;
+    overflow: auto;
     padding-bottom: 90px;
 }
 
-.dashuserinfo{
+.dashuserinfo {
     font-size: 38px;
     color: white;
 }
 
-.dropdown-menu{
-        -webkit-transition: margin .4s ease-in-out;
+.dropdown-menu {
+    -webkit-transition: margin .4s ease-in-out;
     -moz-transition: margin .4s ease-in-out;
     -o-transition: margin .4s ease-in-out;
     -ms-transition: margin .4s ease-in-out;
     transition: margin .4s ease-in-out;
-
 }
 
-.maindashsidetoggle{
-    color:#3e576c;
+.maindashsidetoggle {
+    color: #3e576c;
 }
 
-.mainnavtext{
+.mainnavtext {
     font: 14px "LatoBlack",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     text-decoration: none;
@@ -86,18 +86,18 @@ span {
     transition: all 0.15s cubic-bezier(0.5, 0.2, 0, 1);
 }
 
-.mainnavleftbuttons{
+.mainnavleftbuttons {
     width: 100%;
     position: absolute;
-    top: -3px
+    top: -3px;
 }
 
-.mainnavtext{
-        display: inline-block !important;
-        text-align: center;
+.mainnavtext {
+    display: inline-block !important;
+    text-align: center;
 }
 
-.ion-nav-buttons>ul>li {
+.ion-nav-buttons > ul > li {
     height: 100%;
     box-sizing: border-box;
     float: left;
@@ -109,12 +109,12 @@ span {
 
 
 
-.ScorePostData{
-    background:red;
+.ScorePostData {
+    background: red;
 }
 
 
-.logoutButton{
+.logoutButton {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -122,50 +122,47 @@ span {
 
 
 .maindashmenubtncontainer {
-  bottom: 0;
-  position: fixed;
-  margin: 1em;
-  right: 0px;
-      z-index: 7;
+    bottom: 0;
+    position: fixed;
+    margin: 1em;
+    right: 0px;
+    z-index: 7;
 }
 
 .maindashlowermenubutton {
-  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 
-              0px 4px 12px -7px rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
-  display: block;
-  width: 56px;
-  height: 56px;
-  margin: 20px auto 0;
-  position: relative;
-  -webkit-transition: all .1s ease-out;
-          transition: all .1s ease-out;  
+    box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin: 20px auto 0;
+    position: relative;
+    -webkit-transition: all .1s ease-out;
+    transition: all .1s ease-out;
 }
 
-.maindashlowermenubutton:active, 
-.maindashlowermenubutton:focus, 
-.maindashlowermenubutton:hover {
-  box-shadow: 0 0 4px rgba(0,0,0,.14),
-    0 4px 8px rgba(0,0,0,.28);
-}
+    .maindashlowermenubutton:active,
+    .maindashlowermenubutton:focus,
+    .maindashlowermenubutton:hover {
+        box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    }
 
-.maindashlowermenubutton:not(:last-child) {
-  width: 40px;
-  height: 40px;
-  margin: 20px auto 0;
-  opacity: 0;
-  -webkit-transform: translateY(50px);
-      -ms-transform: translateY(50px);
-          transform: translateY(50px);
-}
+    .maindashlowermenubutton:not(:last-child) {
+        width: 40px;
+        height: 40px;
+        margin: 20px auto 0;
+        opacity: 0;
+        -webkit-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        transform: translateY(50px);
+    }
 
-.maindashmenubtncontainer:hover 
-.maindashlowermenubutton:not(:last-child) {
-  opacity: 1;
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
-  margin: 15px auto 0;
+.maindashmenubtncontainer:hover .maindashlowermenubutton:not(:last-child) {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    margin: 15px auto 0;
 }
 
 /* Unessential styling for sliding up maindashlowermenubutton at differnt speeds */
@@ -192,35 +189,36 @@ span {
 }
 
 .card {
-        padding-top: 1px;
+    padding-top: 1px;
     padding-bottom: 1px;
     box-shadow: 2px 5px 4px rgba(25, 189, 155, 0.37) !important;
 }
 
 
-drawer {
-  display: block;
-  position: fixed;
-  width: 60px;
-  height: 100%;
-  z-index: 100;
-  background-color: white;
+.drawer {
+    top: 44px;
+    min-width: 60px;
+    width: 60px;
 }
 
-.drawer-opener-button{
+md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {
+    background-color: rgb(25, 65, 189) !important;
+}
+
+.drawer-opener-button {
     width: 60px;
     position: absolute;
     left: 0;
     height: 41px;
     top: 0px;
-    background: rgba(236, 236, 236, 0.7);
+    ;
 }
 
-.drawer-opener-button > button {
-    margin-top: 5px;
-}
+    .drawer-opener-button > button {
+        margin-top: 5px;
+    }
 
-.drawer-text{
+.drawer-text {
     width: 66px;
     height: 60px;
     padding: 16px 60px 16px 4px;
@@ -228,7 +226,8 @@ drawer {
     border: none;
     border-bottom: 2px solid #9abcd9;
 }
-.drawer-info{
+
+.drawer-info {
     font-size: 11px;
     position: absolute;
     bottom: 0;
@@ -236,8 +235,9 @@ drawer {
     width: 100%;
     text-align: center;
 }
-.draw-icon{
-        width: 100%;
+
+.draw-icon {
+    width: 100%;
     text-align: center;
     left: 0;
     position: absolute;
@@ -247,19 +247,66 @@ drawer {
 
 
 drawer.animate {
-  -webkit-transition: 300ms all ease;
-  transition: 300ms all ease;
+    -webkit-transition: 300ms all ease;
+    transition: 300ms all ease;
 }
 
 drawer.left {
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-  box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
 }
+
 drawer.right {
-  right: 0;
-  top: 0;
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-  box-shadow: -1px 0px 10px rgba(0,0,0,0.3);
+    right: 0;
+    top: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    box-shadow: -1px 0px 10px rgba(0,0,0,0.3);
 }
+
+
+.drawer-opener-button {
+    display: none;
+}
+
+.desktop-nav-buttons {
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+    .desktop-nav-buttons > li {
+        font-family: 'Raleway', sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        margin: 17px;
+        display: inline-block;
+        padding-left: 12px;
+    }
+
+        .desktop-nav-buttons > li:hover {
+            -webkit-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-transition: all 500ms ease;
+            -moz-transition: all 500ms ease;
+            -ms-transition: all 500ms ease;
+            -o-transition: all 500ms ease;
+            transition: all 500ms ease;
+            cursor: pointer;
+        }
+
+.main-desktop-icon {
+    width: 100px;
+    height: 50px;
+    background-image: url('../../../Images/Icons/Iconsmind-Outline-The-WhiteHouse.ico');
+}
+
+    .main-desktop-icon:before {
+        background-image: url('../../../Images/Icons/Iconsmind-Outline-The-WhiteHouse.ico');
+        width: 100px;
+        height: 50px;
+    }
+    

@@ -1,81 +1,102 @@
-﻿.loginmain {
-    width: 100%;
-    height: 100%;
-}
-
-.loginmainbanner {
-    width: 100%;
+﻿.login-main-wrapper {
     position: relative;
-    height: 5px;
-    background-color: #2f3d42;
-}
-
-.loginmainimgs {
     height: 100%;
-    background: #aeb6b0;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.loginbutton{
-    text-align: right;
-    margin: 10px;
-}
-
-.loginmainimgsfadeout {
-    opacity: 0;
-}
-
-.loginmainimgsfadein {
-    opacity: 1;
-}
-
-.loginimglarge {
-    opacity: .91;
-    max-height: 250px;
     width: 100%;
+    top: 43px;
+    padding-bottom: 44px;
+}
+
+.login-header {
+    font-family: 'Cinzel', serif;
+    font-family: 'Merriweather', serif;
+    font-size: 28px;
+    top: 12px;
     position: relative;
-}
-
-.loginmainfooter {
-    position: absolute;
-    height: 30px;
     width: 100%;
-    background: transparent;
-    z-index: 5;
-    bottom: 43px;
+    left: 0;
+    text-align: center;
+    color: #FFFFFF;
 }
 
-.logincourselabel {
-    font-size: 45px;
-    color: #767676;
-    bottom: 70px;
+.login-header-wrapper{
+        height: 100%;
+    text-align: center;
+        
 }
 
-.loginmainform {
-    left: 37%;
-    position: fixed;
-    top: 40%;
-    z-index: 1;
-
+.login-main-divider{
+        background: rgb(1, 87, 155);
+    color: white !important;
+    font-weight: 700;
+    font-size: 18px;
+    opacity:.75;
 }
 
-.logindashbuttons {
-    width: 100%;
-}
-
-.logindashfacebook {
-    padding-bottom: 15px;
-}
-
-.dashloginbackground {
-    height: 50%;
-    width: 100%;
-}
-
-.dashloginbackimage {
+.login-header-img{
     height: 100%;
-    width: 100%;
+     width:100%;
+     position: absolute;
+}
+
+.login-header-img > img{
+    height: 100%;
+    display: block;
+    margin: auto;
+    width: 101%;
+    top: -20px;
+    opacity: .95;
+
+}
+
+.new-account-login-container {
+    display: block;
+    margin: auto;
+    height: 200px;
+        padding-left: 10px;
+    padding-right: 10px;
+}
+
+.login-info-img{
+
+}
+
+.main-content-wrapper{
+    /*padding-top: 440px;*/
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+    height: 100%;
+    overflow: auto;
+}
+
+
+.login-inputs{
+    border: 2px solid #ffffff;
+    width: 250px;
+    border-radius: 3px;
+    height: 39px;
+}
+
+.login-incomplete-buttons{
+    margin: 12px;
+    font-family: 'Cinzel', serif;
+    font-family: 'Merriweather', serif;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+
+.login-input-label{
+        color: white;
+    font-size: 20px;
+}
+
+
+
+/*Mobile Features*/
+@media screen and (max-width: 767px) {
+
+    .main-content-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 }

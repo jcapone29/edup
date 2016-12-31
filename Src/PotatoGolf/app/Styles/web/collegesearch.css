@@ -43,9 +43,32 @@
 
 
 .college-card-results{
-        background: #f4f4f4;
+        background:rgb(255, 255, 255);
+        padding: 0;
+        height: 100%;
 }
 
+.college-card-results > img {
+        position: absolute;
+    height: 140px;
+    width: 100%;
+    padding-right:30px;
+}
+
+.card-info-bottom-container{
+    height: 100%;
+    padding-top: 140px;
+    position: relative;
+    
+}
+
+.college-card-image-side-nav {
+    width:30px; 
+    height: 140px;
+     position: absolute;
+     right:0;
+     text-align:center;
+}
 
 
 .college-search-filter-header{
@@ -81,13 +104,20 @@
 
 
 .college-search-card{
-    perspective: 500;
+        perspective: 500;
     -moz-perspective: 500;
     -ms-perspective: 500;
     -o-perspective: 500;
-    height: 215px;
+    height: 278px;
     position: relative;
     cursor: pointer;
+    padding-left: 12px;
+}
+
+.college-logo-img{
+    position: absolute;
+    width: 100%;
+    padding-right: 31px;
 }
 
 .college-search-card-front,.college-search-card-back{
@@ -126,17 +156,20 @@
 		}
 
 .college-search-zoom {
-        -moz-transition: all .5s;
-    -ms-transition: all .5s;
-    -o-transition: all .5s;
-    -webkit-transition: all .5s;
-transition: all .5s;
-    height: 100%;
+     width:100%;
+        height: 100%;
     bottom: -20px;
     margin-left: 0px;
     position: fixed;
     z-index: 999;
     padding-top: 44px;
+   
+        -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+transition: all .5s;
+
 }
 .college-results-list{
     height: 100%;

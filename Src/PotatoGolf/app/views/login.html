@@ -1,51 +1,195 @@
 ﻿<link href="app/Styles/web/login.css" rel="stylesheet" />
-<div ng-controller="LoginCtrl as vm" class="mainviewwrapper">
-    <div class="loginmainbanner"></div>
-    <div class="loginmainimgs">
-        <div>
-            
-            <div ng-class="{'loginmainform' : !vm.dashsrv.sideMenuState}" >
-              <div>
-                  <div class="animated fadeInLeft logincourselabel col-xs-12">
-                      Login
-                  </div>
-                  
-              </div>
-                <div class="col-xs-12">
-                    <div class="list list-inset">
-                        <label class="item item-input">
-                            <i class="icon ion-person placeholder-icon"></i>
-                            <input type="text" placeholder="Username">
-                        </label>
-                    </div>
-                    <div class="list list-inset">
-                        <label class="item item-input">
-                            <i class="icon ion-search placeholder-icon"></i>
-                            <input type="password" placeholder="Password">
-                        </label>
-                    </div>
-                    <div class="loginbutton">
-                        <button class="button button-balanced" ui-sref="dashboard">Login</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="logindashfacebook">
-                        <button class="button button-assertive logindashbuttons" data-onsuccess="onSignIn" ng-click="vm.authenticate('google')">Sign in with Google</button>
-                    </div>
-                    <div>
-                        <button class="button button-positive logindashbuttons" ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid-custom" style="width: 100%; height: 97%">
-            <div class="row dashloginbackground" >
-
-            </div>
-        </div>
-    </div>
-    <div class="loginmainfooter">
-        tesdt
-    </div>
+<div class="login-header-img">
+    <img src="../../Images/Healy_Hall_at_sunset.jpg" class="img-responsive" />
 </div>
+<div ng-controller="LoginCtrl as vm" class="login-main-wrapper">
+    <div style="height:100%; width:100%; overflow:auto">
+        <div class="main-content-wrapper">
+            <md-content style="height: 100%; background: rgba(255, 255, 255, 0.18); " md-theme="altTheme">
+                    <div class="new-account-login-container">
+                      
+                            <md-content class="md-no-momentum" style="margin: auto;width: 250px; background:transparent;">
+                                <md-input-container class="md-icon-float md-block login-inputs">
+                                    <md-icon class="name"><i style="font-size: 25px;color: #FFFFFF" class="ion-person"></i></md-icon>
+                                    <label class="login-input-label" style="color:white;">Email </label>
+                                    <input ng-model="user.name" style="border: none;color:white;" type="email">
+                                </md-input-container>
+                                <md-input-container class="md-icon-float md-block login-inputs">
+                                    <label class="login-input-label" style="color:white;">Password</label>
+                                    <md-icon class="name"><i style="font-size: 25px;color: #FFFFFF" class="ion-locked"></i></md-icon>
+                                    <input ng-model="user.name" style="border: none;color:white;" type="password">
+                                </md-input-container>
+                            </md-content>
+                            <button class="button button-assertive logindashbuttons" data-onsuccess="onSignIn" ui-sref="dashboard">Sign in with Google</button>
+                            <button class="button button-positive logindashbuttons" style="float:right;" ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
+                </div>
+                     <section >
+                    <md-subheader class="md-primary login-main-divider">Unread Messages</md-subheader>
+                         <md-grid-list md-cols-xs="4" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                                       md-row-height-gt-md="1:1" md-row-height="1:1"
+                                       md-gutter="12px" md-gutter-gt-sm="8px" >
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 
+                                 
+                                
+                             </md-grid-tile>
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
 
+                                 
+                             </md-grid-tile>
+
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 <img class="login-info-img" style="height:100%; width:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                
+                             </md-grid-tile>
+                         </md-grid-list>
+                    </section>
+                   <section>
+                    <md-subheader class="md-primary login-main-divider">Read Messages</md-subheader>
+                         <md-grid-list md-cols-xs="4" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                                       md-row-height-gt-md="1:1" md-row-height="1:1"
+                                       md-gutter="12px" md-gutter-gt-sm="8px">
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 <img style="height:100%; width:100%;" src="../../Images/graduation.jpg" class="md-card-image" alt="Washed Out">
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 <img style="height:100%; width:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="6" md-colspan-sm="6" md-colspan-xs="4">
+                                 <div id="sampleMap" style="width: 100%; height:100%;">                    </div>
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 <img style="height:100%; width:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+
+                             <md-grid-tile class="red" md-rowspan="2" md-colspan="2" md-colspan-sm="6" md-colspan-xs="4">
+                                 <img style="height:100%; width:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                 <md-grid-tile-footer>
+                                 </md-grid-tile-footer>
+                             </md-grid-tile>
+                         </md-grid-list>
+                    </section>
+                </md-content>
+
+
+                    <!--<div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media">
+                                    <img style="height:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                </div>
+                            </md-card-title-media>
+                            <md-card-title-text>
+                                <span class="md-headline">Card with image</span>
+                                <span class="md-subhead">Medium</span>
+                            </md-card-title-text>
+
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button>Action 1</md-button>
+                            <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-content class="md-no-momentum" style="margin: auto;width: 250px; background:transparent;">
+                        <md-input-container class="md-icon-float md-block login-inputs">
+                            <md-icon class="name"><i style="font-size: 25px;color: #FFFFFF" class="ion-person"></i></md-icon>
+                            <label class="login-input-label" style="color:white;">Email </label>
+                            <input ng-model="user.name" style="border: none;color:white;" type="email">
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block login-inputs">
+                            <label class="login-input-label" style="color:white;">Password</label>
+                            <md-icon class="name"><i style="font-size: 25px;color: #FFFFFF" class="ion-locked"></i></md-icon>
+                            <input ng-model="user.name" style="border: none;color:white;" type="password">
+                        </md-input-container>
+                    </md-content>
+
+                    <button class="button button-assertive logindashbuttons" data-onsuccess="onSignIn" ng-click="vm.authenticate('google')">Sign in with Google</button>
+                    <button class="button button-positive logindashbuttons" style="float:right;" ng-click="vm.authenticate('facebook')">Sign in with Facebook</button>
+                </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Card with image</span>
+                                <span class="md-subhead">Medium</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-lg card-media">
+                                    <img style="height:100%;" src="../../Images/college-fall.jpg" class="md-card-image" alt="Washed Out">
+                                </div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button>Action 1</md-button>
+                            <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+
+
+
+
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Card with image</span>
+                                <span class="md-subhead">Medium</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-md card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button>Action 1</md-button>
+                            <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <div id="sampleMap" style="width: 100%; height:220px;">
+                    </div>
+                </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Card with image</span>
+                                <span class="md-subhead">Medium</span>
+                            </md-card-title-text>
+                            <md-card-title-media>
+                                <div class="md-media-md card-media"></div>
+                            </md-card-title-media>
+                        </md-card-title>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button>Action 1</md-button>
+                            <md-button>Action 2</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>-->
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
