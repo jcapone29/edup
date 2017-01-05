@@ -281,8 +281,8 @@ var Potato;
             function DashboardSvc($http, $q) {
                 this.$http = $http;
                 this.$q = $q;
-                this.api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
-                //api = "http://localhost:51201/api/edup/"
+                //api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
+                this.api = "http://localhost:51201/api/edup/";
                 //CSS
                 this.sideMenuState = false;
                 this.showSideNavToggle = false;

@@ -13,33 +13,62 @@
     </div>
     <div class="college-results-list">
         <div class="list" style="height:100%;">
-            <div class="col-sm-6 col-md-4 list animated fadeInUp college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" >  
-                    <div class="item item-body college-card-results">
-                        <div>
-                            <div class="college-logo-img">
-                                <img class="img-responsive" src="https://unsplash.it/350/150/?random">
+            <!--<div class="col-sm-6 col-md-4 list animated fadeInUp college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" >
+                <div class="item item-body college-card-results">
+                    <div>
+                        <div class="college-logo-img">
+                            <img class="img-responsive" src="https://unsplash.it/350/150/?random">
 
-                            </div>
-                            <div class="college-card-image-side-nav">
-                                <i class="ion-android-star-outline" style="font-size: 35px"></i>
-                                <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
-                                <i class="ion-location" style="font-size: 35px"></i>
-                            </div>
                         </div>
-                        
-                        
-                        
-                        <div class="card-info-bottom-container">
-                            <p>
-                                {{info.Institution_Name}}
-                            </p>
+                        <div class="college-card-image-side-nav">
+                            <i class="ion-android-star-outline" style="font-size: 35px"></i>
+                            <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
+                            <i class="ion-location" style="font-size: 35px"></i>
                         </div>
-
-                      
                     </div>
-            </div>
+
+
+
+                    <div class="card-info-bottom-container">
+                        <p>
+                            {{info.Institution_Name}}
+                        </p>
+                    </div>
+
+
+                </div>
+        </div>-->
+            <md-virtual-repeat-container id="vertical-container">
+                <div class="animated fadeInUp college-search-card"  md-virtual-repeat="info in vm.instituionInfo | filter:metainfosearch" flex>
+                   
+                        <div class="item item-body college-card-results">
+                            <div>
+                                <div class="college-logo-img">
+                                    <img class="img-responsive" src="https://unsplash.it/350/150/?random">
+
+                                </div>
+                                <div class="college-card-image-side-nav">
+                                    <i class="ion-android-star-outline" style="font-size: 35px"></i>
+                                    <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
+                                    <i class="ion-location" style="font-size: 35px"></i>
+                                </div>
+                            </div>
+
+
+
+                            <div class="card-info-bottom-container">
+                                <p>
+                                    {{info.Name}}
+                                </p>
+                            </div>
+
+
+                        </div>
+                   
+                     </div>
+                </md-virtual-repeat-container>
         </div>
-    </div>
+        </div>
     <nav class="maindashmenubtncontainer">
         <a class="maindashlowermenubutton" tooltip="Ghin"></a>
         <a class="maindashlowermenubutton" tooltip="Twitter"></a>

@@ -310,3 +310,9 @@ drawer.right {
         height: 50px;
     }
     
+
+
+    #vertical-container {
+  height: 100%;
+  width: 100%;
+  }

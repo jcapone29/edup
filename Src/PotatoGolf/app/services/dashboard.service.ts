@@ -2,8 +2,8 @@
 
     export class DashboardSvc {
 
-        api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
-        //api = "http://localhost:51201/api/edup/"
+        //api = "http://ec2-52-91-68-23.compute-1.amazonaws.com/CapApi/api/edup/";
+        api = "http://localhost:51201/api/edup/"
         //CSS
         sideMenuState = false;
         showSideNavToggle = false;
