@@ -1,8 +1,8 @@
-﻿'use strict';
+﻿    'use strict';
 
 module Potato.Golf {
 
-    export var app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer', 'ngMaterial']);
+    export var app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer', 'ngMaterial','rzModule']);
 
     app.config(function ($stateProvider: any, $urlRouterProvider: any, $authProvider: any) {
         $stateProvider

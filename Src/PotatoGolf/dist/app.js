@@ -3,7 +3,7 @@ var Potato;
 (function (Potato) {
     var Golf;
     (function (Golf) {
-        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer', 'ngMaterial']);
+        Golf.app = angular.module("p.golf", ['ionic', 'ngCordova', 'ui.router', 'satellizer', 'ionic.contrib.drawer', 'ngMaterial', 'rzModule']);
         Golf.app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
             $stateProvider
                 .state('login', {
@@ -82,6 +82,15 @@ var Potato;
                 this.testing = [1, 2, 3, 4, 5, 6];
                 this.instituionInfo = new Array();
                 this.getInstitutionMeta();
+                this.slider = {
+                    minValue: 10,
+                    maxValue: 90,
+                    options: {
+                        floor: 0,
+                        ceil: 100,
+                        step: 1
+                    }
+                };
             }
             CollegeSearchCtrl.prototype.initMap = function (info) {
                 info.UnitId;

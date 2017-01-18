@@ -15,4 +15,15 @@
     .desktop-nav-buttons{
         display:none;
     }
+
+    .college-search-card{
+
+    height: 278px;
+    /*position: relative;*/
+    cursor: pointer;
+    width:95% !important;
+     /*display:flex;*/
+
+}
+
 }

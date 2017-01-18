@@ -6,11 +6,19 @@
         instituionInfo = new Array<InstituionInfo>();
         public static $inject: string[] = ["$scope", "DashboardSvc", "$state"];
         map: any;
-
+        slider: any;
         constructor(public $scope: any, public dashsrv: DashboardSvc, public $state: any) {
 
             this.getInstitutionMeta();
-            
+            this.slider = {
+                minValue: 10,
+                maxValue: 90,
+                options: {
+                    floor: 0,
+                    ceil: 100,
+                    step: 1
+                }
+            };
         }
 
         initMap(info: InstituionInfo) {

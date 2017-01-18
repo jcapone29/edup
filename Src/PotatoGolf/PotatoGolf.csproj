@@ -40,6 +40,7 @@
     <Content Include="Content\angular-material.layouts.ie_fixes.css" />
     <Content Include="Content\angular-material.layouts.min.css" />
     <Content Include="Content\angular-material.min.css" />
+    <Content Include="Content\rzslider\rzslider.min.css" />
     <Content Include="Images\auburn_univ.jpg" />
     <Content Include="Images\college-campus-2.jpg" />
     <Content Include="Images\education-icon.png" />
@@ -61,6 +62,7 @@
     <Content Include="Scripts\angular\angular.js" />
     <Content Include="Scripts\angular\angular.min.js" />
     <Content Include="Scripts\ionic.contrib.drawer.js" />
+    <Content Include="Scripts\rzslider\rzslider.min.js" />
     <Content Include="Scripts\SlideoutNav.js" />
     <Content Include="app\views\dashboard.html" />
     <Content Include="app\views\login.html" />
@@ -872,6 +874,7 @@
     <Content Include="app\Entities\client_secret_664035970252-muqashu8bkoe94s361fnooqo5044trnq.apps.googleusercontent.com.json" />
     <Content Include="Scripts\angular-aria\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate\angular-animate.min.js.map" />
+    <Content Include="Content\rzslider\rzslider.scss" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\ionic-angular.js" />
     <Content Include="Scripts\ionic-angular.min.js" />

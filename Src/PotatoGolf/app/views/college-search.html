@@ -1,19 +1,165 @@
 ﻿<link href="app/Styles/web/collegesearch.css" rel="stylesheet" />
 <link href="app/Styles/mobile/collegesearch.mobile.css" rel="stylesheet" />
-    <div class="college-search-filter-header">
-        <md-progress-linear md-mode="indeterminate" ng-if="vm.instituionInfo.length === 0"></md-progress-linear>
-        <div class="item-input-inset input-search-college">
-            <label class="item-input-wrapper" style="border-radius: 0px; background: transparent;">
-                <input type="text" placeholder="Search" ng-model="metainfosearch">
-            </label>
-        </div>
-        <div class="filter-button">
-            <i class="ion-android-funnel" ui-sref="filters"></i>
-        </div>
+<div class="college-search-filter-header">
+    <md-progress-linear md-mode="indeterminate" ng-if="vm.instituionInfo.length === 0"></md-progress-linear>
+    <div class="item-input-inset input-search-college">
+        <label class="item-input-wrapper" style="border-radius: 0px; background: transparent;">
+            <input type="text" placeholder="Search" ng-model="metainfosearch">
+        </label>
     </div>
-    <div class="college-results-list">
-        <div class="list" style="height:100%;">
-            <!--<div class="col-sm-6 col-md-4 list animated fadeInUp college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" >
+    <div class="filter-button">
+        <i class="ion-android-funnel" ui-sref="filters"></i>
+    </div>
+</div>
+<div class="college-results-list">
+
+    <!--<div class="col-sm-6 col-md-4 list animated fadeInUp college-search-card" ng-repeat="info in vm.instituionInfo | filter:metainfosearch" >
+            <div class="item item-body college-card-results">
+                <div>
+                    <div class="college-logo-img">
+                        <img class="img-responsive" src="https://unsplash.it/350/150/?random">
+
+                    </div>
+                    <div class="college-card-image-side-nav">
+                        <i class="ion-android-star-outline" style="font-size: 35px"></i>
+                        <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
+                        <i class="ion-location" style="font-size: 35px"></i>
+                    </div>
+                </div>
+
+
+
+                <div class="card-info-bottom-container">
+                    <p>
+                        {{info.Institution_Name}}
+                    </p>
+                </div>
+
+
+            </div>
+    </div>-->
+    <div class="college-search-side-nav">
+        <md-sidenav class="md-sidenav-right"
+                    md-component-id="right"
+                    md-is-locked-open="$mdMedia('gt-md')"
+                    md-whiteframe="4" style="width: 100%;max-width: 98%; height:100%;">
+
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools" style="background-color:rgb(31, 163, 240); text-align:center;">Optimize your search</h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                
+                <md-tabs  md-selected="selectedIndex" md-border-bottom md-autoselect >
+                    <md-tab label="one">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Tab One</h1>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <span class="input-label">Tuition Range</span>
+                                    <rzslider rz-slider-model="vm.slider.minValue"
+                                              rz-slider-high="vm.slider.maxValue"
+                                              rz-slider-options="vm.slider.options"></rzslider>
+                                </li>
+                                <li class="list-group-item" style="height:130px">
+                                    <span class="input-label">SAT</span>
+                                    <div class="col-xs-12">
+                                        <div class="col-xs-4">
+                                            <md-input-container class="md-block" flex-gt-sm>
+                                                <label>Math</label>
+                                                <input md-maxlength="3" required name="name" ng-model="user.name" />
+                                                <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+                                                <div ng-messages="userForm.name.$error">
+                                                    <div ng-message="required">Math SAT Score Rqeured</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <md-input-container class="md-block" flex-gt-sm>
+                                                <label>Writing</label>
+                                                <input md-maxlength="30" required name="name" ng-model="user.name" />
+                                                <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+                                                <div ng-messages="userForm.name.$error">
+                                                    <div ng-message="required">Math SAT Score Rqeured</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <md-input-container class="md-block" flex-gt-sm>
+                                                <label>Reading</label>
+                                                <input md-maxlength="30" required name="name" ng-model="user.name" />
+                                                <div class="hint" ng-if="showHints">Tell us what we should call you!</div>
+                                                <div ng-messages="userForm.name.$error">
+                                                    <div ng-message="required">Math SAT Score Rqeured</div>
+                                                </div>
+                                            </md-input-container>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="input-label">Majors</span>
+                                    <div class="card col-33" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;background: rgba(25, 189, 155, 0.19);">
+                                            Accounting
+                                        </div>
+                                    </div>
+                                    <div class="card col-33" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;">
+                                            Business
+                                        </div>
+                                    </div>
+
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="input-label">States</span>
+                                    <div class="card col-20" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;">
+                                            MA
+                                        </div>
+                                    </div>
+                                    <div class="card col-20" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;">
+                                            KY
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="input-label">Sports</span>
+                                    <div class="card col-20" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;">
+                                            Track
+                                        </div>
+                                    </div>
+                                    <div class="card col-20" style="margin:0; display: inline-block;">
+                                        <div class="item item-divider" style="font-size:12px;">
+                                            Soccer
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="two">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Tab One</h1>
+                            
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+
+                
+            </md-content>
+
+        </md-sidenav>
+    </div>
+    <md-content layout="row" flex style="background:transparent;">
+        <md-virtual-repeat-container id="vertical-container" layout="row" layout-xs="column">
+
+
+            <md-card class="animated fadeInUp college-search-card" flex="33" md-virtual-repeat="info in vm.instituionInfo | filter:metainfosearch">
                 <div class="item item-body college-card-results">
                     <div>
                         <div class="college-logo-img">
@@ -31,48 +177,27 @@
 
                     <div class="card-info-bottom-container">
                         <p>
-                            {{info.Institution_Name}}
+                            {{info.Name}}
                         </p>
                     </div>
 
 
+
                 </div>
-        </div>-->
-            <md-virtual-repeat-container id="vertical-container">
-                <div class="animated fadeInUp college-search-card"  md-virtual-repeat="info in vm.instituionInfo | filter:metainfosearch" flex>
-                   
-                        <div class="item item-body college-card-results">
-                            <div>
-                                <div class="college-logo-img">
-                                    <img class="img-responsive" src="https://unsplash.it/350/150/?random">
-
-                                </div>
-                                <div class="college-card-image-side-nav">
-                                    <i class="ion-android-star-outline" style="font-size: 35px"></i>
-                                    <i class="ion-android-favorite-outline" style="font-size: 35px"></i>
-                                    <i class="ion-location" style="font-size: 35px"></i>
-                                </div>
-                            </div>
+            </md-card>
 
 
 
-                            <div class="card-info-bottom-container">
-                                <p>
-                                    {{info.Name}}
-                                </p>
-                            </div>
+        </md-virtual-repeat-container>
+    </md-content>
+
+</div>
 
 
-                        </div>
-                   
-                     </div>
-                </md-virtual-repeat-container>
-        </div>
-        </div>
-    <nav class="maindashmenubtncontainer">
-        <a class="maindashlowermenubutton" tooltip="Ghin"></a>
-        <a class="maindashlowermenubutton" tooltip="Twitter"></a>
-        <a class="maindashlowermenubutton" tooltip="Filters" ui-sref="dashboard"></a>
-        <a class="maindashlowermenubutton"></a>
-    </nav>
+<nav class="maindashmenubtncontainer">
+    <a class="maindashlowermenubutton" tooltip="Ghin"></a>
+    <a class="maindashlowermenubutton" tooltip="Twitter"></a>
+    <a class="maindashlowermenubutton" tooltip="Filters" ui-sref="dashboard"></a>
+    <a class="maindashlowermenubutton"></a>
+</nav>
 
